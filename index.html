@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KEUANGAN ANDRA</title><link rel="stylesheet" href="style.css">
+<title>STATISTIK KEUANGAN</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="app">
@@ -16,7 +16,13 @@
 </aside>
 
 <main>
-<header><div><h1>STATISTIK KEUANGAN</h1></div><button class="primary" id="openModal">＋ TAMBAH TRANSAKSI </button></header>
+<header>
+<div><h1>STATISTIK KEUANGAN</h1></div>
+<div class="header-actions">
+<button class="primary" id="openModal" type="button">＋ TAMBAH TRANSAKSI</button>
+</div>
+</header>
+<p class="save-status" id="saveStatus">Data tersimpan otomatis di perangkat ini.</p>
 
 <p style="font-size:11px;color:#71808d;margin:0 0 12px"></p><section id="dashboard" class="cards">
   <div class="card balance"><span>Total Saldo</span><strong id="saldo">Rp 0</strong><small>Saldo saat ini</small></div>
