@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ANDRA — Pengelolaan Keuangan</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">AN<span>DRA</span></div>
+  <p class="mini">STATISTIK KEUANGAN</p>
+  <nav>
+    <a class="active" href="#dashboard">▦ Dashboard</a>
+  </nav>
+  <div class="side-bottom"><button id="themeBtn">☾ Mode Gelap</button></div>
+</aside>
+
+<main>
+<header><div><h1>STATISTIK KEUANGAN</h1></div><button class="primary" id="openModal">＋ TAMBAH TRANSAKSI </button></header>
+
+<p style="font-size:11px;color:#71808d;margin:0 0 12px"></p><section id="dashboard" class="cards">
+  <div class="card balance"><span>Total Saldo</span><strong id="saldo">Rp 0</strong><small>Saldo saat ini</small></div>
+  <div class="card"><span>Pemasukan</span><strong id="income">Rp 0</strong><small class="positive">Bulan ini</small></div>
+  <div class="card"><span>Pengeluaran</span><strong id="expense">Rp 0</strong><small class="negative">Bulan ini</small></div>
+  <div class="card"><span>Tabungan</span><strong id="saving">Rp 0</strong><small>Selisih pemasukan</small></div>
+</section>
+
+<section class="grid2">
+  <div class="panel"><div class="panel-head"><div><h2>PEMASUKAN vs PENGELUARAN</h2></div></div><canvas id="chart"></canvas></div>
+  <div class="panel"><div class="panel-head"><div><h2>PENGELUARAN</h2></div></div><div id="categoryChart" class="bars"></div></div>
+</section>
+
+<section id="transactions" class="panel transactions">
+  <div class="panel-head"><div><h2>TRANSAKSI TERBARU</h2></div><input id="search" placeholder="Cari transaksi..."></div>
+  <div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Keterangan</th><th>Kategori</th><th>Tipe</th><th>Jumlah</th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
+</section>
+</div>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" id="close">×</button><p class="eyebrow">NEW TRANSACTION</p><h2>Tambah Transaksi</h2>
+<form id="form">
+<label>Jenis<select id="type"><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select></label>
+<label>Tanggal<input type="date" id="date" required></label>
+<label>Keterangan<input id="desc" placeholder="Contoh: Gaji, makan, listrik..." required></label>
+<label>Kategori<select id="cat"><option>Gaji</option><option>Freelance</option><option>Makanan</option><option>Transportasi</option><option>Tagihan</option><option>Hiburan</option><option>Belanja</option><option>Kesehatan</option><option>Lainnya</option></select></label>
+<label>Jumlah (Rupiah)<input type="number" id="amount" min="1" placeholder="Contoh: 50000" required></label>
+<button class="primary full">Simpan Transaksi</button></form></div></div>
+
+<script src="script.js"></script>
+</body></html>
